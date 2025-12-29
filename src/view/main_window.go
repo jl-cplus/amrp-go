@@ -20,6 +20,7 @@ func MainWindow() {
 
 	win.Resize(fyne.NewSize(600, 450))
 	win.SetFixedSize(true)
+	win.SetMainMenu(MainMenubar(win))
 
 	win.ShowAndRun()
 }
