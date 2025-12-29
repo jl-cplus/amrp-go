@@ -1,0 +1,12 @@
+# This is the list of AMRP's significant contributors.
+#
+# This does not necessarily list everyone who has contributed code,
+# especially since many employees of one corporation may be contributing.
+# To see the full list of contributors, see the revision history in
+# source control.
+#
+# Names should be added to the list like so:
+#
+#   Name/Organization <email address>
+
+jl-cplus <218733449+jl-cplus@users.noreply.github.com>

@@ -1,0 +1,6 @@
+[Details]
+Icon = "../res/icon.png"
+Name = "amrp-go"
+ID = "go.amrp"
+Version = "0.1.0"
+Build = 1
