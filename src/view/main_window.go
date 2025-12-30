@@ -125,6 +125,16 @@ func mainContent(win fyne.Window) *fyne.Container {
 					textarea.SetText(strings.Join(proclog, ""))
 				})
 			}
+			// post output process
+			controller.PostOutputInterceptor(err, opath, func(message *string) {
+				if message != nil {
+					// update on ui thread
+					fyne.Do(func() {
+						proclog = append(proclog, fmt.Sprintf("%-9s%-8s%s\n", util.HHMMSS(), "[INFO ]", *message))
+						textarea.SetText(strings.Join(proclog, ""))
+					})
+				}
+			})
 			// reset
 			reset(openFile)
 		}()

@@ -8,6 +8,7 @@ import (
 	"amrp-go/util"
 	"bufio"
 	"errors"
+	"fmt"
 	"io"
 	"os"
 	"strconv"
@@ -109,4 +110,18 @@ func formatNumberString(str string) string {
 		str = space[:len(space)-1] + "-" + num + " "
 	}
 	return str
+}
+
+func PostOutputInterceptor(err error, outputPath string, callback func(message *string)) {
+	if err == nil {
+		return
+	}
+
+	if err.Error() == util.INVALID_CSV_SCHEMA {
+		// remove output
+		os.Remove(outputPath)
+
+		msg := fmt.Sprintf("Remove: %s", outputPath)
+		callback(&msg)
+	}
 }
