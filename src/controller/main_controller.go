@@ -5,6 +5,7 @@
 package controller
 
 import (
+	"amrp-go/util"
 	"bufio"
 	"errors"
 	"io"
@@ -72,7 +73,7 @@ func processInterceptor(line string) (error, string) {
 	if len(line) < size {
 		// validate schema
 		if len(strings.Split(line, ",")) != len(schema) {
-			return errors.New("Invalid CSV schema detected"), ""
+			return errors.New(util.INVALID_CSV_SCHEMA), ""
 		}
 		node := strings.Split(strings.TrimSuffix(line, "\n"), ",")
 		for i := range node {
