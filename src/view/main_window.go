@@ -9,7 +9,9 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 )
 
 func MainWindow() {
@@ -21,8 +23,30 @@ func MainWindow() {
 	win.Resize(fyne.NewSize(600, 450))
 	win.SetFixedSize(true)
 	win.SetMainMenu(MainMenubar(win))
+	win.SetContent(mainContent(win))
 
 	win.ShowAndRun()
+}
+
+func mainContent(win fyne.Window) *fyne.Container {
+	// center: output textarea
+	textarea := widget.NewMultiLineEntry()
+	textarea.TextStyle = fyne.TextStyle{Monospace: true}
+
+	// bottom: action button
+	actionBtn := widget.NewButtonWithIcon("Patch", theme.MailSendIcon(), func() {})
+	actionBtn.Importance = widget.HighImportance
+
+	// border layout
+	border := container.NewBorder(
+		nil,       // top
+		actionBtn, // bottom
+		nil,       // left
+		nil,       // right
+		textarea,  // center
+	)
+
+	return container.NewPadded(border)
 }
 
 // function below is directly copied from the Fyne demo project.
