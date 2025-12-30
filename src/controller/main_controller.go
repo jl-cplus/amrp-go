@@ -42,8 +42,13 @@ func ProcessCSV(inputPath, outputPath string, progressListener ProgressListener)
 	for {
 		line, err := reader.ReadString('\n')
 		if err == io.EOF {
+			// handle empty file
+			if lineNum == 0 {
+				return errors.New(util.INVALID_CSV_SCHEMA)
+			}
 			break
 		}
+
 		if err != nil {
 			return err
 		}
@@ -67,12 +72,17 @@ func ProcessCSV(inputPath, outputPath string, progressListener ProgressListener)
 
 // patching logic
 func processInterceptor(line string) (error, string) {
-	const size = 653
+	size := [2]int{213, 654}
 	schema := []int{5, 28, 10, 10, 6, 2, 30, 140, 40, 140, 17, 17, 17, 6, 10, 12, 25, 25, 25, 25, 25, 17}
 
+	// validate schema
+	if len(line) != size[0] && len(line) != size[1] {
+		return errors.New(util.INVALID_CSV_SCHEMA), ""
+	}
+
 	// patch header
-	if len(line) < size {
-		// validate schema
+	if len(line) == size[0] {
+		// validate header column
 		if len(strings.Split(line, ",")) != len(schema) {
 			return errors.New(util.INVALID_CSV_SCHEMA), ""
 		}
@@ -95,7 +105,7 @@ func processInterceptor(line string) (error, string) {
 			substr = formatNumberString(substr)
 		}
 
-		str = append(str, "\""+substr+"\"")
+		str = append(str, strconv.Quote(substr))
 		begin = end + 1
 	}
 
