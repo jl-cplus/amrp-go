@@ -9,7 +9,7 @@ import (
 )
 
 const NO_FILE_SELECTED = "No file selected..."
-const INVALID_CSV_SCHEMA = "Invalid CSV schema detected"
+const INVALID_CSV_SCHEMA = "Invalid CSV schema detected..."
 
 var AWAIT_MESSAGE = []string{
 	"Data is processing... Please wait!",
