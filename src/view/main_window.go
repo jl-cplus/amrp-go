@@ -10,6 +10,7 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
@@ -29,6 +30,15 @@ func MainWindow() {
 }
 
 func mainContent(win fyne.Window) *fyne.Container {
+	// top: open file widget
+	openFile := &OpenFileDialog{}
+	openFile.SetVerbose(true)
+	openFile.OpenFileWidget(win, func(path string, err error) {
+		if err != nil {
+			dialog.ShowError(err, win)
+		}
+	})
+
 	// center: output textarea
 	textarea := widget.NewMultiLineEntry()
 	textarea.TextStyle = fyne.TextStyle{Monospace: true}
@@ -39,11 +49,11 @@ func mainContent(win fyne.Window) *fyne.Container {
 
 	// border layout
 	border := container.NewBorder(
-		nil,       // top
-		actionBtn, // bottom
-		nil,       // left
-		nil,       // right
-		textarea,  // center
+		openFile.Container, // top
+		actionBtn,          // bottom
+		nil,                // left
+		nil,                // right
+		textarea,           // center
 	)
 
 	return container.NewPadded(border)
