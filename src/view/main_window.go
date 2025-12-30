@@ -87,8 +87,8 @@ func mainContent(win fyne.Window) *fyne.Container {
 		// generate output filename
 		opath := util.RenameAppendSuffix(fpath, "new")
 		// update proclog
-		proclog = append(proclog, fmt.Sprintf("%-9s%-8s%-8s%s\n", util.HHMMSS(), "[INFO ]", "Source:", fpath))
-		proclog = append(proclog, fmt.Sprintf("%-9s%-8s%-8s%s\n", util.HHMMSS(), "[INFO ]", "Output:", opath))
+		proclog = append(proclog, util.ProclogInfo("Source:", fpath))
+		proclog = append(proclog, util.ProclogInfo("Output:", opath))
 		// update ui
 		textarea.SetText(strings.Join(proclog, ""))
 
@@ -103,7 +103,7 @@ func mainContent(win fyne.Window) *fyne.Container {
 				if strings.Contains(last, "Patching") {
 					proclog = proclog[:len(proclog)-1]
 				}
-				proclog = append(proclog, fmt.Sprintf("%-9s%-8sPatching total record(s) %d...\n", util.HHMMSS(), "[INFO ]", num))
+				proclog = append(proclog, util.ProclogInfo(fmt.Sprintf("Patching total record(s) %d...", num)))
 				// update on ui thread
 				fyne.Do(func() {
 					textarea.SetText(strings.Join(proclog, ""))
@@ -115,13 +115,13 @@ func mainContent(win fyne.Window) *fyne.Container {
 				dialog.ShowError(err, win)
 				// update on ui thread
 				fyne.Do(func() {
-					proclog = append(proclog, fmt.Sprintf("%-9s%-8s%s\n", util.HHMMSS(), "[ERROR]", err.Error()))
+					proclog = append(proclog, util.ProclogError(err))
 					textarea.SetText(strings.Join(proclog, ""))
 				})
 			} else {
 				// update on ui thread
 				fyne.Do(func() {
-					proclog = append(proclog, fmt.Sprintf("%-9s%-8s%s\n", util.HHMMSS(), "[INFO ]", "Completed successfully..."))
+					proclog = append(proclog, util.ProclogInfo("Completed successfully..."))
 					textarea.SetText(strings.Join(proclog, ""))
 				})
 			}
@@ -130,7 +130,7 @@ func mainContent(win fyne.Window) *fyne.Container {
 				if message != nil {
 					// update on ui thread
 					fyne.Do(func() {
-						proclog = append(proclog, fmt.Sprintf("%-9s%-8s%s\n", util.HHMMSS(), "[INFO ]", *message))
+						proclog = append(proclog, util.ProclogInfo(*message))
 						textarea.SetText(strings.Join(proclog, ""))
 					})
 				}
