@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="144"
+   height="144"
+   viewBox="0 0 38.1 38.100001"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="icon.src.svg"
+   inkscape:version="1.4.1 (unknown)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="1"
+     inkscape:cx="307.5"
+     inkscape:cy="0.5"
+     inkscape:window-width="1366"
+     inkscape:window-height="700"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showborder="false" />
+  <defs
+     id="defs1">
+    <rect
+       x="362.56525"
+       y="-353.41946"
+       width="6.5327072"
+       height="711.4118"
+       id="rect4" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text4"
+       style="font-weight:bold;font-size:85.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#ffffff" />
+    <g
+       id="g5-1"
+       transform="matrix(0.3277691,0,0,0.31437693,-30.956678,-4.2700328)"
+       inkscape:export-filename="icon-new-final.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g3-2">
+        <path
+           id="rect10-1-7"
+           style="fill:#ffcc00;stroke-width:0.228019"
+           d="m 100.9044,56.273296 57.98791,-17.521623 -7.83861,79.198317 -44.61616,-9.683 z"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           id="rect11-5-0"
+           style="fill:#8d5fd3;stroke-width:0.223096"
+           d="m 122.37889,87.709836 63.52113,-18.70488 15.68159,39.348744 -59.55722,19.68803 z"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           id="rect10-4-9-9"
+           style="fill:#ff5555;stroke:none;stroke-width:0;stroke-dasharray:none"
+           d="m 138.91308,28.187157 57.47185,-7.871736 7.84424,67.594975 -71.60932,2.06005 z"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <g
+         id="g4-3">
+        <rect
+           style="fill:#000000;stroke-width:0.387455"
+           id="rect2-9-6"
+           width="70"
+           height="65"
+           x="117.29205"
+           y="36.957794" />
+        <g
+           id="g2-0">
+          <text
+             xml:space="preserve"
+             style="font-weight:bold;font-size:42.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;stroke-width:0.264583"
+             x="121.95419"
+             y="83.919876"
+             id="text2-1-6"><tspan
+               sodipodi:role="line"
+               id="tspan2-7-2"
+               style="font-size:42.3333px;fill:#ffffff;stroke-width:0.264583"
+               x="121.95419"
+               y="83.919876">M</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-weight:bold;font-size:16.9333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;stroke-width:0.264583"
+             x="162.12872"
+             y="54.021713"
+             id="text3-7-6"><tspan
+               sodipodi:role="line"
+               id="tspan3-1-1"
+               style="font-size:16.9333px;stroke-width:0.264583"
+               x="162.12872"
+               y="54.021713">Rp</tspan></text>
+          <g
+             id="g1-8"
+             transform="translate(0,2.1166667)">
+            <rect
+               style="fill:#ffffff;stroke-width:0.40806"
+               id="rect6-5-7"
+               width="24"
+               height="3"
+               x="124.72067"
+               y="89.70163" />
+            <rect
+               style="fill:#ffffff;stroke-width:0.20403"
+               id="rect6-5-3-9"
+               width="6"
+               height="3"
+               x="150.28308"
+               y="89.70163" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
